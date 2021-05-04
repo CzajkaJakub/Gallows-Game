@@ -1,0 +1,170 @@
+body{
+    background-color: black;
+    color: honeydew;
+    font-size: 28px;
+    margin: 0;
+    min-height: 600px;
+    height: 100vh;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+#container
+{
+    opacity: 0%;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 100px auto 10%;
+    min-height: 600px;
+}
+
+header{
+    width: 100%;
+    text-align: center;
+    height: 50px;
+}
+
+
+#content
+{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+}
+
+article{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#szubienica
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#img
+{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#haslo
+{
+    text-transform: uppercase;
+}
+
+footer
+{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#img2
+{
+    height: 50px;
+    width: 50px;
+    background-color: gray;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+#img3
+{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.letter
+{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px;
+    margin: 6px;
+    border-radius: 15px;
+    border: 4px solid grey;
+    float: left;
+    cursor: pointer;
+}
+
+#alfabet
+{
+    margin: auto;
+
+}
+
+h1{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.letter:hover
+{
+    color: white;
+    border: 4px solid white;
+    box-shadow: 0px 0px 20px 3px white;
+}
+
+#reset
+{
+    width: 100%;
+    color: green;
+    cursor: pointer;
+
+}
+
+
+
+@media screen and (max-width:1000px){
+    #content
+    {
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+    }
+    .letter
+    {
+    width: 15px;
+    height: 15px;
+    font-size: 20px;
+    }
+    #haslo
+    {
+        font-size: 28px;
+    }
+
+}
+
+@media screen and (max-width:350px){
+    #content
+    {
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+    }
+    .letter
+    {
+    width: 10px;
+    height: 10px;
+    font-size: 18px;
+    }
+    #haslo
+    {
+        font-size: 25px;
+    }
+
+}
+

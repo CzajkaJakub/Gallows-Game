@@ -1,0 +1,127 @@
+String.prototype.ustawZnak = function(place, mark)
+{
+    if (place > this.length -1) return this.toString();
+    else return this.substr(0, place) + mark + this.substr(place+1);
+}
+
+function checkpass(){
+    if (localStorage.getItem('hnumber') > 0){
+        var x = 1;
+    }else{
+        location.href="index.html";
+    }
+}
+
+function pojawSie(){
+    if (opa<100){
+        document.getElementById("container").style.opacity = opa +"%";
+        opa+=2;
+        setTimeout("pojawSie()", 50);
+    }else{
+
+        opa=0;
+    }
+}
+
+function makehaslo(haslo){
+    var haslo2="";
+    for (i=0; i<dlugosc; i++){
+        if (haslo.charAt(i) == " ") haslo2 += " ";
+        else haslo2 += "-";
+    }
+    document.getElementById('haslo').innerHTML = haslo2;
+    haslo1 = haslo2;
+}
+
+function makealfabet(){
+    var alfabet ="";
+    for (i=1; i<=35; i++){
+        var lett = letters[i-1];
+        alfabet += '<div class="letter" onclick="checkletter('+i+')" id="'+lett+'">' + lett + '</div>';
+        if (i%7 == 0){
+            alfabet += '<div style="clear:both"></div>';
+        }
+    }
+    document.getElementById("alfabet").innerHTML = alfabet;
+}
+
+function checkletter(x){
+    var check = 0;
+    if (proba < 9){
+        for(i=0; i<dlugosc; i++){
+            if((haslo.charAt(i)) == (letters[x-1])){
+                haslo1 = haslo1.ustawZnak(i, letters[x-1]);
+                check = 1;
+            }
+        }
+        if (check == 1){
+            yes.play();
+            document.getElementById(letters[x-1]).style.border="4px solid green";
+            document.getElementById(letters[x-1]).style.color="green";
+            document.getElementById(letters[x-1]).style.cursor="default";
+            document.getElementById('haslo').innerHTML = haslo1;
+            document.getElementById(letters[x-1]).setAttribute("onclick", ";");
+        }else{
+            proba+=1;
+            no.play();
+            document.getElementById(letters[x-1]).style.border="4px solid red";
+            document.getElementById(letters[x-1]).style.color="red";
+            document.getElementById(letters[x-1]).style.cursor="default";
+            document.getElementById(letters[x-1]).setAttribute("onclick", ";");
+            document.getElementById("szubienica").innerHTML = '<img id="img" src="HangmanParts/s' + proba +'.jpg" alt="szubienica"></img>';
+        }
+    }
+    if(haslo1 == haslo){
+        document.getElementById('alfabet').innerHTML = 'Gratulacje! Wygrałeś. <div id="reset" onclick="reload()">Zagraj jeszcze raz!</div><br>';
+    }
+    else if(proba == 9){
+        document.getElementById('haslo').innerHTML = haslo;
+        document.getElementById('alfabet').innerHTML = 'Niestety, przegrałeś. <div id="reset" onclick="reload()">Spróbuj jeszcze raz!</div><br>';
+    }
+
+}
+
+
+function reload(){
+    location.href="index.html";
+}
+
+function check(){
+    setTimeout("checkpass()", 500);
+    setTimeout("makealfabet()", 500);
+    setTimeout(function (){makehaslo(haslo);}, 100);
+    setTimeout("pojawSie()", 500);
+    if (localStorage.getItem('hnumber') == 0){
+        location.href="index.html";
+    }
+}
+
+function playmusic(){
+    if (mus == 0){
+        mus = 1;
+        music.play();
+    }else{
+        mus = 0;
+        music.pause();
+    }
+}
+
+var mus = 0;
+var music = new Audio('music/Phantom Sage - Our Lives Past (feat. Emily Stiles) [NCS Release].mp3');
+var yes = new Audio('music/True question correct answer sound effect.mp3');
+var no = new Audio('music/False question incorrect answer sound effect.mp3');
+var proba = 0;
+var haslo1;
+var letters = ["A", "Ą", "B", "C", "Ć", "D", "E", "Ę", "F", "G", "H", "I", "J", "K", "L", "Ł", "M", "N", "Ń", "O","Ó", "P", "Q", "R", "S", "Ś", "T", "U", "V", "W", "X", "Y", "Z", "Ź", "Ż"];
+var opa=0;
+var hasla = ['lekkoatletyka', 'telekomunikacja', 'konstantynopolitański', 'KTO SIĘ CZUBI TEN SIĘ LUBI',
+ 'NIE RZUCAJ SŁÓW NA WIATR', 'JAK TRWOGA TO DO BOGA', 'STAROŚĆ NIE RADOŚĆ MŁODOŚĆ NIE WIECZNOŚĆ', 'osobliwości',
+  'porozumienie dwóch przyjaciół'];
+var haslo = hasla[localStorage.getItem('hnumber')-1];
+haslo = haslo.toUpperCase();
+var dlugosc = haslo.length;
+window.onload = setTimeout("check()", 200);
+
+
+
+
