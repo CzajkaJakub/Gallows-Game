@@ -1,4 +1,7 @@
 # Gallows-Game
-## https://czajkajakub.github.io/Gallows-Game/index.html
+## https://czajkajakub.pl/hangman/
 
-Simple game mainly made by JavaScript.
+Technology used:
+-PHP
+-JavaScript
+-SQL

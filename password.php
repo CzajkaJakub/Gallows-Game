@@ -6,7 +6,7 @@
     }
 
     session_start();
-    require_once "database.php";
+    require_once "database/database.php";
     $wybranoKat = 0;
     $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 
