@@ -8,6 +8,12 @@ body{
     font-family: 'Ubuntu Mono', monospace;
 }
 
+#kategoria
+{
+    font-size: 15px;
+    color: red;
+}
+
 #container
 {
     opacity: 0%;

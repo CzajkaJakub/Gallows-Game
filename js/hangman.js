@@ -4,13 +4,7 @@ String.prototype.ustawZnak = function(place, mark)
     else return this.substr(0, place) + mark + this.substr(place+1);
 }
 
-function checkpass(){
-    if (localStorage.getItem('hnumber') > 0){
-        var x = 1;
-    }else{
-        location.href="index.html";
-    }
-}
+
 
 function pojawSie(){
     if (opa<100){
@@ -30,6 +24,7 @@ function makehaslo(haslo){
         else haslo2 += "-";
     }
     document.getElementById('haslo').innerHTML = haslo2;
+    document.getElementById('kategoria').innerHTML = "(" + kategoria + ")";
     haslo1 = haslo2;
 }
 
@@ -87,6 +82,10 @@ function reload(){
 }
 
 function check(){
+    haslo = document.getElementById("has").getAttribute("value");
+    kategoria = document.getElementById("kat").getAttribute("value");
+    dlugosc = haslo.length;
+    haslo = haslo.toUpperCase();
     setTimeout("checkpass()", 500);
     setTimeout("makealfabet()", 500);
     setTimeout(function (){makehaslo(haslo);}, 100);
@@ -114,14 +113,7 @@ var proba = 0;
 var haslo1;
 var letters = ["A", "Ą", "B", "C", "Ć", "D", "E", "Ę", "F", "G", "H", "I", "J", "K", "L", "Ł", "M", "N", "Ń", "O","Ó", "P", "Q", "R", "S", "Ś", "T", "U", "V", "W", "X", "Y", "Z", "Ź", "Ż"];
 var opa=0;
-var hasla = ['lekkoatletyka', 'telekomunikacja', 'konstantynopolitański', 'KTO SIĘ CZUBI TEN SIĘ LUBI',
- 'NIE RZUCAJ SŁÓW NA WIATR', 'JAK TRWOGA TO DO BOGA', 'STAROŚĆ NIE RADOŚĆ MŁODOŚĆ NIE WIECZNOŚĆ', 'osobliwości',
-  'porozumienie dwóch przyjaciół'];
-var haslo = hasla[localStorage.getItem('hnumber')-1];
-haslo = haslo.toUpperCase();
-var dlugosc = haslo.length;
-window.onload = setTimeout("check()", 200);
-
-
-
-
+var haslo;
+var dlugosc;
+var kategoria;
+window.onload = setTimeout("check()", 500);

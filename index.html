@@ -8,19 +8,32 @@
     <link rel="shortcut icon" href="ico/ico.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap" rel="stylesheet">
-    <script src="js/pre.js"></script>
     <title>Hangman Game</title>
 </head>
 
 <body>
     <header id="container">
 
-        <span id="text">
+        <content id="text">
             Witaj w grze szubienica!<br>
-            Podaj cyfrę od 1-9, aby wybrać losowe hasło!<br><br>
-            <input type="text" id="pole" required maxlength="1"><br>
-            <input type="submit" id="submit" value="Przejdź do gry!" onclick="checknum()"><br>
-        </span>
+            Wybierz kategorię hasła, która będzie losowana z bazy danych!<br>
+            <span id="info">(z danej kategorii, zostanie wylosowane 1 hasło z 10)</span><br><br>
+            <form action="password.php" method="post" id="kat">
+                <input type="submit" class="kategoria" id="los" value="Losuj hasło wraz z kategorią" name="kat"><br>
+                <input type="submit" class="kategoria" value="Roślina" name="kat">
+                <input type="submit" class="kategoria" value="Sport" name="kat">
+                <input type="submit" class="kategoria" value="Muzyka" name="kat">
+                <input type="submit" class="kategoria" value="Gry" name="kat">
+                <input type="submit" class="kategoria" value="Zwierzęta" name="kat">
+
+                <input type="submit" class="kategoria" value="Potrawa" name="kat">
+                
+                <input type="submit" class="kategoria" value="Państwo" name="kat">
+                <input type="submit" class="kategoria" value="Historia" name="kat">
+
+                <input type="submit" class="kategoria" value="Kosmos" name="kat">
+            </form>
+        </content>
 
     </header>
 

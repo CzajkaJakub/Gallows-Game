@@ -26,17 +26,81 @@ body{
     margin-bottom: auto;
 }
 
-#pole
+
+#info
 {
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    background-color: rgb(127, 180, 204);
-    border: rgb(0, 0, 0) 1px solid;
-    color: black;
+    font-size: 18px;
+    color: red;
+}
+
+#kat
+{
+    width: 100%;
+    max-width: 900px;
     text-align: center;
-    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.kategoria
+{
+    height: 50px;
+    width: 30%;
+    margin: 10px;
+    border: 2px solid rgba(59, 18, 18, 0.59);
+    color: rgba(0, 0, 0, 0.55);
+    text-align: center;
+    font: bold 1.2em/20px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    background: -webkit-linear-gradient(top, #0bdf00, #11610d);
+    background: -moz-linear-gradient(top, #0bdf00, #11610d);
+    background: -o-linear-gradient(top, #0bdf00, #11610d);
+    background: -ms-linear-gradient(top, #0bdf00, #11610d);
+    background: linear-gradient(top, #0bdf00, #11610d);
+    -webkit-border-radius: 50px;
+    -khtml-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-box-shadow: 0 8px 0 #063c03;
+    -moz-box-shadow: 0 8px 0 #063c03;
+    box-shadow: 0 8px 0 #063c03;
+    text-shadow: 0 2px 2px rgba(255, 255, 255, 0.2);
 }
 
 
+.kategoria:hover {
+    background: #11610d;
+    background: -webkit-linear-gradient(top, #11610d, #0bdf00);
+    background: -moz-linear-gradient(top, #11610d, #0bdf00);
+    background: -o-linear-gradient(top, #11610d, #0bdf00);
+    background: -ms-linear-gradient(top, #11610d, #0bdf00);
+    background: linear-gradient(top, #11610d, #0bdf00);
+    cursor: pointer;
+    color: white;
+    border: 4px solid white;
+    box-shadow: 0px 0px 20px 3px white;
+}
 
+#los
+{
+    width: 70%;
+}
+
+@media screen and (max-width:900px)
+{
+    #los{
+        width: auto;
+    }
+    .kategoria{
+        font: bold 1em/15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    }
+}
+
+@media screen and (max-width:500px)
+{
+    #los{
+        width: auto;
+    }
+    .kategoria{
+        font: bold 0.7em/30px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    }
+}
