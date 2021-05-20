@@ -86,13 +86,9 @@ function check(){
     kategoria = document.getElementById("kat").getAttribute("value");
     dlugosc = haslo.length;
     haslo = haslo.toUpperCase();
-    setTimeout("checkpass()", 500);
     setTimeout("makealfabet()", 500);
     setTimeout(function (){makehaslo(haslo);}, 100);
     setTimeout("pojawSie()", 500);
-    if (localStorage.getItem('hnumber') == 0){
-        location.href="index.html";
-    }
 }
 
 function playmusic(){
@@ -106,9 +102,9 @@ function playmusic(){
 }
 
 var mus = 0;
-var music = new Audio('music/Phantom Sage - Our Lives Past (feat. Emily Stiles) [NCS Release].mp3');
-var yes = new Audio('music/True question correct answer sound effect.mp3');
-var no = new Audio('music/False question incorrect answer sound effect.mp3');
+var music = new Audio("js/music/Phantom Sage - Our Lives Past (feat. Emily Stiles) [NCS Release].mp3");
+var yes = new Audio("js/music/True question correct answer sound effect.mp3");
+var no = new Audio("js/music/False question incorrect answer sound effect.mp3");
 var proba = 0;
 var haslo1;
 var letters = ["A", "Ą", "B", "C", "Ć", "D", "E", "Ę", "F", "G", "H", "I", "J", "K", "L", "Ł", "M", "N", "Ń", "O","Ó", "P", "Q", "R", "S", "Ś", "T", "U", "V", "W", "X", "Y", "Z", "Ź", "Ż"];
