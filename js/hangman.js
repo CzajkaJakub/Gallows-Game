@@ -49,20 +49,21 @@ function checkletter(x){
                 check = 1;
             }
         }
+        let letter = document.getElementById(letters[x-1]);
         if (check == 1){
             yes.play();
-            document.getElementById(letters[x-1]).style.border="4px solid green";
-            document.getElementById(letters[x-1]).style.color="green";
-            document.getElementById(letters[x-1]).style.cursor="default";
+            letter.style.border="4px solid green";
+            letter.style.color="green";
+            letter.style.cursor="default";
             document.getElementById('haslo').innerHTML = haslo1;
-            document.getElementById(letters[x-1]).setAttribute("onclick", ";");
+            letter.setAttribute("onclick", ";");
         }else{
             proba+=1;
             no.play();
-            document.getElementById(letters[x-1]).style.border="4px solid red";
-            document.getElementById(letters[x-1]).style.color="red";
-            document.getElementById(letters[x-1]).style.cursor="default";
-            document.getElementById(letters[x-1]).setAttribute("onclick", ";");
+            letter.style.border="4px solid red";
+            letter.style.color="red";
+            letter.style.cursor="default";
+            letter.setAttribute("onclick", ";");
             document.getElementById("szubienica").innerHTML = '<img id="img" src="HangmanParts/s' + proba +'.jpg" alt="szubienica"></img>';
         }
     }
