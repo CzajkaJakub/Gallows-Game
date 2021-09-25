@@ -1,7 +1,7 @@
 <?php
 
     if (!isset($_POST["kat"])){
-        header('Location: index.html');
+        header('Location: /hangman/index.html');
         exit();
     }
 
@@ -18,6 +18,7 @@
 	{
         $kategoria = $_POST["kat"];
         $i = rand(1, 10);
+
         if ($kategoria == "Losuj hasło wraz z kategorią"){
             $i = rand(1, 100);
             $wybranoKat = 1;
@@ -26,9 +27,11 @@
                 mysqli_real_escape_string($polaczenie,$i))))
                 {
                     $wiersz = $rezultat->fetch_assoc();
+
                     $_SESSION['kategoria'] = $wiersz['kategoria'];
                     $_SESSION['haslo'] = $wiersz['haslo'];
                     $_SESSION['wybrano'] = true;
+
                     $polaczenie->close();
                     header('Location: wisielec.php');
                 }
@@ -40,9 +43,11 @@
             {
                 $wybranoKat = 1;
                 $wiersz = $rezultat->fetch_assoc();
+
                 $_SESSION['kategoria'] = $wiersz['kategoria'];
                 $_SESSION['haslo'] = $wiersz['haslo'];
                 $_SESSION['wybrano'] = true;
+
                 $polaczenie->close();
                 header('Location: wisielec.php');
             }

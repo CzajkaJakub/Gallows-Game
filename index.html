@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles2.css" type="text/css">
-    <link rel="shortcut icon" href="ico.png">
+    <link rel="stylesheet" href="css/categories.css" type="text/css">
+    <link rel="shortcut icon" href="ico/ico.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap" rel="stylesheet">
     <title>Hangman Game</title>
@@ -18,7 +18,7 @@
             Witaj w grze szubienica!<br>
             Wybierz kategorię hasła, która będzie losowana z bazy danych!<br>
             <span id="info">(z danej kategorii, zostanie wylosowane 1 hasło z 10)</span><br><br>
-            <form action="password.php" method="post" id="kat">
+            <form action="php/password.php" method="post" id="kat">
                 <input type="submit" class="kategoria" id="los" value="Losuj hasło wraz z kategorią" name="kat"><br>
                 <input type="submit" class="kategoria" value="Roślina" name="kat">
                 <input type="submit" class="kategoria" value="Sport" name="kat">
@@ -31,10 +31,6 @@
                 <input type="submit" class="kategoria" value="Kosmos" name="kat">
             </form>
         </content>
-
     </header>
-
-
-
 </body>
 </html>
