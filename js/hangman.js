@@ -1,7 +1,7 @@
 const letters = ["A", "Ą", "B", "C", "Ć", "D", "E", "Ę", "F", "G", "H", "I", "J", "K", "L", "Ł", "M", "N", "Ń", "O","Ó", "P", "Q", "R", "S", "Ś", "T", "U", "V", "W", "X", "Y", "Z", "Ź", "Ż"];
-const backgroundMusic = new Audio("/hangman/music/Phantom Sage - Our Lives Past (feat. Emily Stiles) [NCS Release].mp3");
-const yes = new Audio("/hangman/music/True question correct answer sound effect.mp3");
-const no = new Audio("/hangman/music/False question incorrect answer sound effect.mp3");
+const backgroundMusic = new Audio("/music/Phantom Sage - Our Lives Past (feat. Emily Stiles) [NCS Release].mp3");
+const yes = new Audio("/music/True question correct answer sound effect.mp3");
+const no = new Audio("/music/False question incorrect answer sound effect.mp3");
 var playingMusic = 0;
 var currentPassword = "";
 var opacity = 0;
@@ -97,7 +97,7 @@ function markLetter(letter, check){
         letter.style.color="red";
         letter.style.cursor="default";
         letter.setAttribute("onclick", ";");
-        document.getElementById("szubienica").innerHTML = '<img id="img" src="/hangman/HangmanParts/s' + wrongAttempts +'.jpg" alt="szubienica"></img>';
+        document.getElementById("szubienica").innerHTML = '<img id="img" src="/HangmanParts/s' + wrongAttempts +'.jpg" alt="szubienica"></img>';
     }
 }
 
@@ -112,5 +112,5 @@ function playmusic(){
 }
 
 function playAgain(){
-    location.href="/hangman/index.html";
+    location.href="/index.html";
 }
