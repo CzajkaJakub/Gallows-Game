@@ -1,5 +1,5 @@
 # Gallows-Game
-## https://czajkajakub.pl/hangman/
+## https://hangman-x1212.herokuapp.com/
 
 Simple web game. You have to guess a password by pressing a letters.
 
